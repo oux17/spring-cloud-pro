@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.order.mapper.OrderMapper">
+
+    <select id="searchOrder" resultType="java.util.Map">
+        SELECT order_id "orderId",
+               order_name "orderName"
+        from eyes.order_info
+    </select>
+
+    <insert id="insertOrder">
+        insert into eyes.order_info(order_name,order_type)
+        values(#{map.orderName},#{map.orderType})
+    </insert>
+</mapper>
